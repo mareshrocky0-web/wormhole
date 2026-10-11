@@ -1,0 +1,15 @@
+name: Maha-Brahmashtra Ultimate Security Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  ultimate-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+   
+      - name: Run Slither Security Scan
+        uses: crytic/slither-action@main
+        continue-on-error: true
